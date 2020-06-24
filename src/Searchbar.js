@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchResults from "./SearchResults.js";
+import axios from 'axios';
 
 
 export default function Searchbar() {
