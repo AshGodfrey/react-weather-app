@@ -9,7 +9,7 @@ export default function SearchResults(props) {
       <li>Humidity: {props.humidity}</li>
       <li>Wind: {props.wind} </li>
       <li>
-        icon: <img src={props.icon} />
+        icon: <img src={props.icon} alt="weather icon" />
       </li>
     </ul>
   );

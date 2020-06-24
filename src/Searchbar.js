@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchResults from "./SearchResults.js";
-import axios from "axios";
+
 
 export default function Searchbar() {
   let [city, setCity] = useState("");
@@ -12,7 +12,7 @@ export default function Searchbar() {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=`;
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+        `${apiUrl}${city}&units=imperial&appid=${apiKey}`
       )
       .then(handleResponse);
   }
