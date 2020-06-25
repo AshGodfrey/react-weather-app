@@ -26,7 +26,7 @@ export default function Searchbar() {
   }
 
   function handleResponse(response) {
-    console.log(response);
+    console.log(response.data.visibility);
     let base = response.data.main
     setResult({
       temp: base.temp,
@@ -39,7 +39,7 @@ export default function Searchbar() {
       min: base.temp_min,
       max: base.temp_max,
       feel: base.feels_like,
-      pressure: base.pressure,
+      visibility: response.data.visibility,
       sunrise: response.data.sys.sunrise,
       sunset: response.data.sys.sunset
     });
@@ -55,8 +55,9 @@ export default function Searchbar() {
       <div id="city">{city}</div>
       <DateTime />
       <form id="search">
-        <input type="text" placeholder="Username" onChange={updateCity} id="searchbar"/>
+        <input type="text" placeholder="Username" onChange={updateCity} id="search-bar"/><br/>
         <input type="submit" onClick={(event)=>{search(event)}} value="Search" />
+        <input type="submit" onClick={(event)=>{search(event)}} value="Current" />
       </form>
         <Now {...results} />
         <Details {...results}/>

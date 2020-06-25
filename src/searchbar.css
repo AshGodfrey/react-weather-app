@@ -5,12 +5,23 @@
     color: white;
     font-size: 30px;
     font-weight: 300;
+    margin-top: 30px;
 }
 
 #searchbar{
-   width: 70%;
    margin-left: 20px;
    margin-top: 30px;
+}
+
+#search-bar{
+    width: 80%;
+    margin-left: 5px;
+}
+
+#search{
+    position: relative;
+    top: 5px;
+    margin-left: 20px;
 }
 
 input[type=submit]{
@@ -18,7 +29,11 @@ input[type=submit]{
     border: none;
     font: inherit;
     color: inherit;
-    background-color: transparent;
+    background-color: #437791;
+    width: 40%; 
+    height: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
     /* show a hand cursor on hover; some argue that we
     should keep the default arrow cursor for buttons */
     cursor: pointer;   

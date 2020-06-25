@@ -6,7 +6,7 @@ export default function Details(props) {
     { name: "humidity", value: `${props.humidity}%`}, 
     {name: "wind", value: `${props.wind} mph`},
     {name: "feel", value: `${Math.round(props.feel)}°`},
-    {name: "pressure", value: props.pressure}, 
+    {name: "Visibility", value: `${Math.round(props.visibility / 1000 * 0.62137)} mi`}, 
     {name: "sunrise", value: `${formatHours((props.sunrise) * 1000)}`}, 
     {name: "sunset", value: `${formatHours(props.sunset *1000)}`}]
     
