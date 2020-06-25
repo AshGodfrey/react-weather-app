@@ -12,6 +12,7 @@
 #detail-container{
     position: relative;
     left: 20px;
+    top: -60px;
 }
 
 #detail-boxes{

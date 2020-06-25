@@ -5,7 +5,7 @@ export default function Now(props) {
   return (
     <div id="today">
       <div id="forecast-top">
-        <img src={props.icon} alt="weather icon" />
+        <img src={props.icon} alt="weather icon" id="weather-icon"/>
         <p id="description">{props.description}</p>
       </div>
       <div id="temperature-box">

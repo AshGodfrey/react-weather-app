@@ -57,10 +57,9 @@ export default function Searchbar() {
       <form id="search">
         <input type="text" placeholder="Username" onChange={updateCity} id="searchbar"/>
         <input type="submit" onClick={(event)=>{search(event)}} value="Search" />
-        <br />
+      </form>
         <Now {...results} />
         <Details {...results}/>
-      </form>
     </div>
   );
 }
