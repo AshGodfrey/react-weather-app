@@ -54,8 +54,8 @@ export default function Searchbar() {
     <div id="searchbar">
       <div id="city">{city}</div>
       <DateTime />
-      <form>
-        <input type="text" placeholder="Username" onChange={updateCity} />
+      <form id="search">
+        <input type="text" placeholder="Username" onChange={updateCity} id="searchbar"/>
         <input type="submit" onClick={(event)=>{search(event)}} value="Search" />
         <br />
         <Now {...results} />

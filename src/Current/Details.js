@@ -12,15 +12,15 @@ export default function Details(props) {
 
   return (
     <div id="detail-container">
-      <h2>Details ----</h2>
-    <p>
-      {values.map( ( {name, value} ) => {
-      return <div className="small-details">
-        <p>{name}</p>
-        <p>{value}</p>
-      </div>
-      })}
-    </p>
+      <h2>Details ------------------------------------------------------------------------------</h2>
+      <p id="detail-boxes">
+        {values.map( ( {name, value} ) => {
+        return <div className="small-details">
+          <p>{name}</p>
+          <p>{value}</p>
+        </div>
+        })}
+      </p>
     </div>
   );
 }

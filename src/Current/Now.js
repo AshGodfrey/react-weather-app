@@ -12,7 +12,7 @@ export default function Now(props) {
         <p id="current-temp">{Math.round(props.temp)}°</p>
         <div id="side-temps">
           <p id="now-high">{Math.round(props.min)}°</p>
-          <p id="now-low">{Math.round(props.max)}°</p>
+          <p id="now-low"><strong>{Math.round(props.max)}°</strong></p>
         </div>
       </div>
     </div>
