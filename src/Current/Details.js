@@ -11,6 +11,8 @@ export default function Details(props) {
     {name: "sunset", value: `${props.sunset} PM`}]
 
   return (
+    <div id="detail-container">
+      <h2>Details ----</h2>
     <p>
       {values.map( ( {name, value} ) => {
       return <div className="small-details">
@@ -19,5 +21,6 @@ export default function Details(props) {
       </div>
       })}
     </p>
+    </div>
   );
 }
