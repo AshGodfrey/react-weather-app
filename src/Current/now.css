@@ -1,0 +1,28 @@
+#today{
+    height: 250px;
+    padding-left: 40px;
+    color: white;
+}
+
+#description{
+    position: relative;
+    right: -125px;
+    top: -75px
+}
+
+#temperature-box{
+    position: relative;
+    top: -150px;
+
+}
+
+#current-temp{
+    font-size: 100px;
+    font-weight: 100;
+}
+
+#side-temps{
+    position: relative;
+    right: -175px;
+    top: -185px
+}

@@ -1,0 +1,11 @@
+
+#searchbar {
+    border: 1px solid black;
+}
+
+#city{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+}

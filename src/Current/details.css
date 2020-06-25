@@ -1,0 +1,10 @@
+.small-details{
+    display: inline-block; 
+    width: 90px;
+    margin: 10px;
+    height: 120px;
+    text-align: center;
+    background-color: #437791;
+    color: white;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
