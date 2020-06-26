@@ -39,7 +39,7 @@ export default function Searchbar() {
       min: base.temp_min,
       max: base.temp_max,
       feel: base.feels_like,
-      visibility: response.data.visibility,
+      visibility: updateVisibility(response.data.visibility),
       sunrise: response.data.sys.sunrise,
       sunset: response.data.sys.sunset
     });
@@ -48,6 +48,15 @@ export default function Searchbar() {
   function updateCity(event) {
     setCity(event.target.value);
   }
+
+  function updateVisibility(response){
+    if (response === undefined){
+      return 'No Data'
+    }else {
+      return `${Math.round(response / 1000 * 0.62137)} mi`
+    }
+  }
+  
 
 
   return (

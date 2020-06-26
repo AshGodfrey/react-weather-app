@@ -6,26 +6,11 @@ export default function Details(props) {
     { name: "humidity", value: `${props.humidity}%`}, 
     {name: "wind", value: `${props.wind} mph`},
     {name: "feel", value: `${Math.round(props.feel)}°`},
-    {name: "Visibility", value: `${Math.round(props.visibility / 1000 * 0.62137)} mi`}, 
-    {name: "sunrise", value: `${formatHours((props.sunrise) * 1000)}`}, 
-    {name: "sunset", value: `${formatHours(props.sunset *1000)}`}]
+    {name: "Visibility", value: `${props.visibility}`}, 
+    {name: "sunrise", value: `${props.sunrise}`}, 
+    {name: "sunset", value: `${props.sunset}`}
+  ]
     
-    function formatHours(timestamp){
-      let date = new Date(timestamp);
-      let hours = date.getHours();
-      let amOrPm = hours >= 12 ? 'PM' : 'AM';
-      hours = (hours % 12) || 12;
-      if (hours < 10){
-        hours = `0${hours}`;
-      }
-      let minutes = date.getMinutes();
-      if(minutes < 10){
-        minutes =  `0${minutes}`;
-      }
-    
-      let today = date.getDate()
-      return `${hours}:${minutes} ${amOrPm} `
-    }
 
   return (
     <div id="detail-container">
