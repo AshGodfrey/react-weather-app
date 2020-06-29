@@ -40,8 +40,8 @@ export default function Searchbar() {
       max: base.temp_max,
       feel: base.feels_like,
       visibility: updateVisibility(response.data.visibility),
-      sunrise: response.data.sys.sunrise,
-      sunset: response.data.sys.sunset,
+      sunrise: new Date(response.data.sys.sunrise * 1000),
+      sunset: new Date(response.data.sys.sunset * 1000),
       date: new Date(response.data.dt * 1000)
     });
   }
@@ -62,7 +62,10 @@ export default function Searchbar() {
   return (
     <div id="searchbar">
       <div id="city">{city}</div>
-      <DateTime {...results}/>
+      <div id="date-time">
+        Last Updated: 
+        <DateTime {...results}/>
+      </div>
       <form id="search">
         <input type="text" placeholder="Username" onChange={updateCity} id="search-bar"/><br/>
         <input type="submit" onClick={(event)=>{search(event)}} value="Search" />

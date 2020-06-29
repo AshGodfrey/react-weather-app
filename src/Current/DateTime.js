@@ -19,15 +19,10 @@ export default function DateTime(props) {
       }
 
       return(
-        <div> <div id="date-time">Last Updated:<br/>
-        {day} {hours}:{minutes} {amOrPm}</div></div>
+        <div> 
+        {day} {hours}:{minutes} {amOrPm}</div>
       )
+    } else {
+      return ('')
     }
-
- 
-  return (
-    <div id="date-time">
-      Last Updated:
-    </div>
-  );
 }
