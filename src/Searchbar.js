@@ -41,7 +41,8 @@ export default function Searchbar() {
       feel: base.feels_like,
       visibility: updateVisibility(response.data.visibility),
       sunrise: response.data.sys.sunrise,
-      sunset: response.data.sys.sunset
+      sunset: response.data.sys.sunset,
+      date: new Date(response.data.dt * 1000)
     });
   }
 
@@ -56,13 +57,12 @@ export default function Searchbar() {
       return `${Math.round(response / 1000 * 0.62137)} mi`
     }
   }
-  
 
 
   return (
     <div id="searchbar">
       <div id="city">{city}</div>
-      <DateTime />
+      <DateTime {...results}/>
       <form id="search">
         <input type="text" placeholder="Username" onChange={updateCity} id="search-bar"/><br/>
         <input type="submit" onClick={(event)=>{search(event)}} value="Search" />
