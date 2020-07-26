@@ -91,20 +91,9 @@ export default function Searchbar() {
     }
   }
 
-  function showResults(){
-    if (clicked === false) {
-      console.log('test')
-    } else {
-      return(<div>
-        <Now {...results} />
-        <Details {...results}/> 
-      </div>)
-    }
-  }
-
   return (
     <div id="searchbar">
-      {clicked ? (
+      {clicked? (
         <div>
           <div id="city">{city}</div>
           <div id="date-time">
