@@ -2,7 +2,7 @@
     display: inline-block; 
     width: 90px;
     margin: 10px;
-    height: 120px;
+    height: 70px;
     text-align: center;
     background-color: #437791;
     color: white;
@@ -26,4 +26,8 @@ h2{
     margin-left: 10px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+}
+.detail-values{
+    position: relative;
+    top: -10px;
 }

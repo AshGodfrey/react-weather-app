@@ -8,6 +8,7 @@ import DateTime from './Current/DateTime.js'
 
 export default function Searchbar() {
   let [city, setCity] = useState("Cupertino");
+  let [units, setUnits] = useState("imperial")
   let [results, setResult] = useState({});
 
   function search(event) {
@@ -20,7 +21,7 @@ export default function Searchbar() {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=`;
     axios
       .get(
-        `${apiUrl}${city}&units=imperial&appid=${apiKey}`
+        `${apiUrl}${city}&units=${units}&appid=${apiKey}`
       )
       .then(handleResponse);
   }
@@ -64,7 +65,7 @@ export default function Searchbar() {
       <div id="city">{city}</div>
       <DateTime />
       <form id="search">
-        <input type="text" placeholder="Username" onChange={updateCity} id="search-bar"/><br/>
+        <input type="text" placeholder="Search" onChange={updateCity} id="search-bar"/><br/>
         <input type="submit" onClick={(event)=>{search(event)}} value="Search" />
         <input type="submit" onClick={(event)=>{search(event)}} value="Current" />
       </form>
