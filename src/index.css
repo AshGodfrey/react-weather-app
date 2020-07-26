@@ -1,5 +1,10 @@
-body {
+html {
+  min-height: 100%;
+ } 
+ 
+ body{
   background-image: linear-gradient(to top, #a7bdca 0%, #5493b2);
+  height: 100%;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -10,7 +10,8 @@ export default function Details(props) {
     {name: "sunrise", value: `${props.sunrise}`}, 
     {name: "sunset", value: `${props.sunset}`}
   ]
-    
+
+
 
   return (
     <div id="detail-container">
