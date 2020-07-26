@@ -2,6 +2,7 @@ import React from "react";
 import './details.css'
 
 export default function Details(props) {
+
   let values=[
     { name: "humidity", value: `${props.humidity}%`}, 
     {name: "wind", value: `${props.wind} mph`},

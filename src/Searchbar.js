@@ -7,8 +7,8 @@ import DateTime from './Current/DateTime.js'
 
 
 export default function Searchbar() {
+  let units= 'imperial'
   let [city, setCity] = useState("Cupertino");
-  let [units, setUnits] = useState("imperial")
   let [results, setResult] = useState({});
   let apiKey= "e573bc5f2edcf55605d7e7fcd2e01d03";
 
@@ -96,6 +96,9 @@ export default function Searchbar() {
         <input type="submit" onClick={(event)=>{search(event)}} value="Search" />
         <input type="submit" onClick={(event)=>{currentLocation(event)}} value="Current" />
       </form>
+      <div id="temp">
+       °F | °C
+      </div>
         <Now {...results} />
         <Details {...results}/>
     </div>

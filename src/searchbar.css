@@ -8,9 +8,19 @@
     margin-top: 30px;
 }
 
+#temp {
+    position: relative;
+    right: -270px;
+    top: 100px;
+}
+
 #searchbar{
    margin-left: 20px;
    margin-top: 30px;
+   border-radius: 5px;
+   background-image: linear-gradient(to top, #a7bdca 0%, #5493b2);
+   padding: 5px;
+   height: 100%;
 }
 
 #search-bar{
