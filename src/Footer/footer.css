@@ -1,5 +1,7 @@
 #footer{
-    width: 300px;
     margin: 0 auto;
     text-align: center;
+    font-family: monospace;
+    margin-top: 10px;
+    margin-left: 25px;
 }

@@ -4,16 +4,19 @@ import Now from './Current/Now.js'
 import Details from './Current/Details.js'
 import './searchbar.css'
 import DateTime from './Current/DateTime.js'
+import Header from './Header/Header.js'
 
 
 export default function Searchbar() {
   let units= 'imperial'
-  let [city, setCity] = useState("Cupertino");
+  let [city, setCity] = useState("");
   let [results, setResult] = useState({});
+  let [clicked, setClicked] = useState(false)
   let apiKey= "e573bc5f2edcf55605d7e7fcd2e01d03";
 
   function search(event) {
     event.preventDefault();
+    updateClicked();
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=`;
     axios
       .get(
@@ -38,7 +41,7 @@ export default function Searchbar() {
       visibility: updateVisibility(response.data.visibility),
       sunrise: sunTime(new Date(response.data.sys.sunrise * 1000)),
       sunset: sunTime(new Date(response.data.sys.sunset * 1000)),
-      date: new Date(response.data.dt * 1000)
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -58,6 +61,10 @@ export default function Searchbar() {
 
   function updateCity(event) {
     setCity(event.target.value);
+  }
+
+  function updateClicked(event) {
+    setClicked(true);
   }
 
   function updateVisibility(response){
@@ -84,23 +91,39 @@ export default function Searchbar() {
     }
   }
 
+  function showResults(){
+    if (clicked === false) {
+      console.log('test')
+    } else {
+      return(<div>
+        <Now {...results} />
+        <Details {...results}/> 
+      </div>)
+    }
+  }
+
   return (
     <div id="searchbar">
-      <div id="city">{city}</div>
-      <div id="date-time">
-        Last Updated: 
-        <DateTime {...results}/>
-      </div>
+      {clicked ? (
+        <div>
+          <div id="city">{city}</div>
+          <div id="date-time">
+            Last Updated: 
+            <DateTime {...results}/>
+          </div>
+        </div>
+      ) : (<Header />)}
+     
       <form id="search">
         <input type="text" placeholder="Search" onChange={updateCity} id="search-bar"/><br/>
-        <input type="submit" onClick={(event)=>{search(event)}} value="Search" />
-        <input type="submit" onClick={(event)=>{currentLocation(event)}} value="Current" />
+        <input className='search-button' type="submit" onClick={(event)=>{search(event)}} value="Search" />
+        <input className='search-button' type="submit" onClick={(event)=>{currentLocation(event)}} value="Current" />
       </form>
-      <div id="temp">
-       °F | °C
-      </div>
+      {clicked ? (<div>
         <Now {...results} />
-        <Details {...results}/>
+        <Details {...results}/> 
+      </div>) :
+      (<br/>)}
     </div>
   );
 }

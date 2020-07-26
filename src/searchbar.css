@@ -8,20 +8,13 @@
     margin-top: 30px;
 }
 
-#temp {
-    position: relative;
-    right: -270px;
-    top: 100px;
-}
 
 #searchbar{
    margin-left: 20px;
-   margin-top: 30px;
+   margin-top: 20px;
    border-radius: 5px;
    background-image: linear-gradient(to top, #a7bdca 0%, #5493b2);
-   padding: 5px;
-   height: 100%;
-}
+   padding: 5px;}
 
 #search-bar{
     width: 80%;
@@ -30,11 +23,11 @@
 
 #search{
     position: relative;
-    top: 5px;
-    margin-left: 40px;
+    top: 15px;
+    margin-left: 50px;
 }
 
-input[type=submit]{
+input[type='submit']{
     padding: 0;
     border: none;
     font: inherit;
@@ -44,8 +37,6 @@ input[type=submit]{
     height: 20px;
     margin-left: 5px;
     margin-top: 5px;
-    /* show a hand cursor on hover; some argue that we
-    should keep the default arrow cursor for buttons */
     cursor: pointer;   
 }
 
